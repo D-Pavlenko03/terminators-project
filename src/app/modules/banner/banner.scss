@@ -1,0 +1,181 @@
+#banner__slider {
+    height: 50vh;
+    width: 100vw;
+    position: relative;
+
+    @media screen and (max-width: 700px) {
+        height: 270px;
+    }
+
+    @media screen and (max-width: 500px) {
+        height: 250px;
+    }
+
+    @media screen and (max-width: 400px) {
+        height: 200px;
+    }
+}
+
+.swiper-container {
+    height: 100%;
+    width: 100%;
+}
+
+.swiper-slide {
+    &__image-wrapper {
+        width: 100%;
+        height: 100%;
+    } 
+
+    &__image-inner {
+        background-size: cover;
+        background-position: center center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        background-color: hsla(0, 0%, 0%, 0.2);
+        background-blend-mode: overlay;
+        padding: 4rem;
+
+        @media screen and (max-width: 700px) {
+            padding: 2rem;
+        }
+    }
+
+    &__image-one {
+        background-image: url("./../../assets/images/banners/kitchen-banner.jpg");
+    }
+
+    &__image-two {
+        background-image: url("./../../assets/images/banners/living-room-banner.jpg");
+    } 
+
+    &__image-three {
+        background-image: url("./../../assets/images/banners/gray-sofa-banner.jpg");
+    }
+}
+
+h1 {
+    font-family: "Ysabeau", serif;
+    font-weight: 500;
+    color: $white;
+    align-self: flex-start;
+    margin: 0 0 auto 0;
+    font-size: 4.5rem;
+    line-height: 1;
+    transition: all 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) 1.1s;
+    transform: translate3d(-20%, 0, 0);
+    opacity: 0;
+
+    @media screen and (max-width: 1280px) {
+        font-size: 3.9rem;
+    }
+
+    @media screen and (max-width: 960px) {
+        font-size: 3.5rem;
+    }
+
+    @media screen and (max-width: 640px) {
+        font-size: 3.2rem;
+    }
+
+    @media screen and (max-width: 500px) {
+        font-size: 2.8rem;
+    }
+
+    @media screen and (max-width: 400px) {
+        font-size: 1.9rem;
+    }
+
+    span:not(.swiper-slide__emphasis) {
+        @media screen and (max-width: 1280px) {
+            font-size: 2.9rem;
+        }
+
+        @media screen and (max-width: 960px) {
+            font-size: 2.5rem;
+        }
+
+        @media screen and (max-width: 640px) {
+            font-size: 2.1rem;
+        }
+
+        @media screen and (max-width: 500px) {
+            font-size: 2.0rem;
+        }
+
+        @media screen and (max-width: 400px) {
+            font-size: 1.3rem;
+        }
+    }
+}
+
+.swiper-slide__emphasis {
+    font-weight: 700;
+    font-style: italic;
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) 1.2s;
+    transform: translate3d(-20%, 0, 0);
+    display: inline-block;
+}
+
+.swiper-slide.swiper-slide-active h1,
+.swiper-slide.swiper-slide-active h1 span.swiper-slide__emphasis {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+}
+
+.swiper-container {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.swiper-pagination-vertical.swiper-pagination-bullets.swiper-pagination-bullets-dynamic, 
+.swiper-vertical>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+    width: 30px;
+}
+
+.swiper-pagination-vertical.swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet, 
+.swiper-vertical>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .2s transform,.2s top;
+    border: 2px solid $black;
+    background-color: $white;
+    color: $black;
+    font-size: 16px;
+    position: relative;
+}
+
+#slideNumber {
+    border-radius: 50%;
+    color: $black;
+    font-size: 16px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 150;
+}
+
+.swiper-scrollbar.swiper-scrollbar-vertical,
+.swiper-vertical>.swiper-scrollbar {
+    background-color: transparent;
+    width: 2px;
+    height: 150px;
+    right: calc(50% + 17px);
+    top: auto;
+    bottom: 30px;
+    cursor: pointer;   
+
+    @media screen and (max-width: 700px) {
+        height: 84px;
+        right: calc(25% + 13px);
+    }
+}
