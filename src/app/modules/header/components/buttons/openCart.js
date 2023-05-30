@@ -8,10 +8,10 @@ export default function openCart() {
    let sectionElement = document.getElementById('cart-box');
    parentElement.appendChild(sectionElement);
 
-   openCartBtn.addEventListener("click", function () {
+   openCartBtn.addEventListener("click", function() {
       cartDiv.classList.add("shopping__cart-open");
       overlay.style.display = "block";
-      document.body.style.overflow = "hidden";!!
+      document.body.style.overflow = "hidden";
    });
 
    deleteCartBtn.addEventListener("click", function () {
